@@ -7,8 +7,8 @@
 
 $(document).ready(function(){
 
-	var loginMsg = t('minimal_cas', 'Login with CAS');
-    var altUrl = "?app=minimal_cas";
+	var loginMsg = t('user_minimal_cas', 'Login with CAS');
+    var altUrl = "?app=user_minimal_cas";
     var log_cas = true;
 
     $('.grouptop  #user').parent().hide();
@@ -25,13 +25,13 @@ $(document).ready(function(){
     });
    
     /*
-    $('<a id="login-cas-action" href="?app=minimal_cas" ></a>').css(
+    $('<a id="login-cas-action" href="?app=user_minimal_cas" ></a>').css(
     {
         'text-decoration': 'none'
     }).appendTo('form');
 
 
-	$('<img id="login-cas-img" src="' + OC.imagePath('minimal_cas', 'logo.svg') + '" title="'+ loginMsg +'" alt="'+ loginMsg +'" />').css(
+	$('<img id="login-cas-img" src="' + OC.imagePath('user_minimal_cas', 'logo.svg') + '" title="'+ loginMsg +'" alt="'+ loginMsg +'" />').css(
 	{
 	}).appendTo('#login-cas-action');
     */

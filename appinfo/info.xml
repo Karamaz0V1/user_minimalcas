@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <info>
-	<id>minimal_cas</id>
+	<id>user_minimal_cas</id>
 	<name>Minimal CAS backend</name>
 	<description>Authenticate Users by a CAS SERVER</description>
 	<licence>AGPL</licence>

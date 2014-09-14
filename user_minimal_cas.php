@@ -1,7 +1,7 @@
 <?php
 
 /**
- * ownCloud - minimal_cas
+ * ownCloud - user_minimal_cas
  *
  * @author Sixto Martin <sixto.martin.garcia@gmail.com>
  * @copyright Sixto Martin Garcia. 2012
@@ -22,7 +22,7 @@
  *
  */
 
-class OC_MINIMAL_CAS extends OC_User_Backend {
+class OC_USER_MINIMAL_CAS extends OC_User_Backend {
 
 	// cached settings
 	public $autocreate;
@@ -37,7 +37,7 @@ class OC_MINIMAL_CAS extends OC_User_Backend {
 
 	public static function getInstance() {
 		if (self::$instance == null) {
-			self::$instance = new OC_MINIMAL_CAS();
+			self::$instance = new OC_USER_MINIMAL_CAS();
 		}
 		return self::$instance;
 	}
@@ -48,19 +48,19 @@ class OC_MINIMAL_CAS extends OC_User_Backend {
 		$CAS_PORT = '443';
 		$CAS_PATH = '/cas';
 
-		$this->autocreate = OCP\Config::getAppValue('minimal_cas', 'cas_autocreate', true);
-		$this->updateUserData = OCP\Config::getAppValue('minimal_cas', 'cas_update_user_data', true);
-		$this->defaultGroup = OCP\Config::getAppValue('minimal_cas', 'cas_default_group', '');
-		$this->protectedGroups = explode (',', str_replace(' ', '', OCP\Config::getAppValue('minimal_cas', 'cas_protected_groups', '')));
-		$this->mailMapping = OCP\Config::getAppValue('minimal_cas', 'cas_email_mapping', '');
-		$this->displayNameMapping = OCP\Config::getAppValue('minimal_cas', 'cas_displayName_mapping', '');
-		$this->groupMapping = OCP\Config::getAppValue('minimal_cas', 'cas_group_mapping', '');
+		$this->autocreate = OCP\Config::getAppValue('user_minimal_cas', 'cas_autocreate', true);
+		$this->updateUserData = OCP\Config::getAppValue('user_minimal_cas', 'cas_update_user_data', true);
+		$this->defaultGroup = OCP\Config::getAppValue('user_minimal_cas', 'cas_default_group', '');
+		$this->protectedGroups = explode (',', str_replace(' ', '', OCP\Config::getAppValue('user_minimal_cas', 'cas_protected_groups', '')));
+		$this->mailMapping = OCP\Config::getAppValue('user_minimal_cas', 'cas_email_mapping', '');
+		$this->displayNameMapping = OCP\Config::getAppValue('user_minimal_cas', 'cas_displayName_mapping', '');
+		$this->groupMapping = OCP\Config::getAppValue('user_minimal_cas', 'cas_group_mapping', '');
 
-		$casVersion = OCP\Config::getAppValue('minimal_cas', 'cas_server_version', '2.0');
-		$casHostname = OCP\Config::getAppValue('minimal_cas', 'cas_server_hostname', $CAS_HOSTNAME);
-		$casPort = OCP\Config::getAppValue('minimal_cas', 'cas_server_port', $CAS_PORT);
-		$casPath = OCP\Config::getAppValue('minimal_cas', 'cas_server_path', $CAS_PATH);
-		$casCertPath = OCP\Config::getAppValue('minimal_cas', 'cas_cert_path', '');
+		$casVersion = OCP\Config::getAppValue('user_minimal_cas', 'cas_server_version', '2.0');
+		$casHostname = OCP\Config::getAppValue('user_minimal_cas', 'cas_server_hostname', $CAS_HOSTNAME);
+		$casPort = OCP\Config::getAppValue('user_minimal_cas', 'cas_server_port', $CAS_PORT);
+		$casPath = OCP\Config::getAppValue('user_minimal_cas', 'cas_server_path', $CAS_PATH);
+		$casCertPath = OCP\Config::getAppValue('user_minimal_cas', 'cas_cert_path', '');
 
 		global $initialized_cas;
 
