@@ -51,7 +51,7 @@ Basic
 Mapping
 -------
 
-If CAS provides extra attributes, user_cas can retrieve the values of them. Since their name differs in various setups it is necessary to map owncloud-attribute-names to CAS-attribute-names.
+If CAS provides extra attributes, minimal_cas can retrieve the values of them. Since their name differs in various setups it is necessary to map owncloud-attribute-names to CAS-attribute-names.
 
 **Email**: Name of email attribute in CAS
 
