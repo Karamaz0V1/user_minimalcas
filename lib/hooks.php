@@ -24,7 +24,7 @@
 /**
  * This class contains all hooks.
  */
-class OC_USER_CAS_Hooks {
+class OC_MINIMAL_CAS_Hooks {
 
 	static public function logout($parameters) {
 

@@ -1,5 +1,5 @@
 
-<link rel="stylesheet" type="text/css" href="../apps/user_cas/css/cas.css" />
+<link rel="stylesheet" type="text/css" href="../apps/minimal_cas/css/cas.css" />
 
 <form id="cas" action="#" method="post">
 	<div id="casSettings" class="personalblock">
