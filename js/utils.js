@@ -58,8 +58,13 @@ $(document).ready(function(){
     }).appendTo('footer .info');
     */
     //$('footer .info').append('<button id="classic_login" >classic login</button>');
-    $('form').after('<button id="classic_login" >classic login</button>');
+    //$('form').after('<button id="classic_login" >classic login</button>');
 
+    var footerInfo = $('body#body-login footer p.info');
+    $(footerInfo).empty();
+    $(footerInfo).text(" – "); 
+    $(footerInfo).prepend($('<a>').attr({href : "http://owncloud.org" , target : "_blank"}).text("ownCloud"));
+    $(footerInfo).append($('<a>').attr({id : "classic_login"}).text("classic login"));
     $('#classic_login').click(function () {
         /*
         $('#user').parent().slideToggle();
