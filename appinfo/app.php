@@ -36,7 +36,7 @@ if (OCP\App::isEnabled('user_minimal_cas')) {
 	// register user backend
 	OC_User::useBackend( 'CAS' );
 
-	OC::$CLASSPATH['OC_user_minimal_cas_Hooks'] = 'user_minimal_cas/lib/hooks.php';
+	OC::$CLASSPATH['OC_user_minimal_cas_Hooks'] = 'minimal_cas/lib/hooks.php';
 	OCP\Util::connectHook('OC_User', 'logout', 'OC_USER_MINIMAL_CAS_Hooks', 'logout');
 
 	if( isset($_GET['app']) && $_GET['app'] == 'user_minimal_cas' ) {
