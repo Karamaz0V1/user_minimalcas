@@ -11,8 +11,8 @@ $(document).ready(function(){
     var altUrl = "?app=user_cas";
     var log_cas = true;
 
-    $('#user').parent().hide();
-    $('#password').parent().hide();
+    $('.grouptop  #user').parent().hide();
+    $('.groupbottom #password').parent().hide();
     $('#remember_login').hide();
     $('#remember_login+label').hide();
     //$('#submit').hide();
@@ -65,6 +65,7 @@ $(document).ready(function(){
     $(footerInfo).text(" – "); 
     $(footerInfo).prepend($('<a>').attr({href : "http://owncloud.org" , target : "_blank"}).text("ownCloud"));
     $(footerInfo).append($('<a>').attr({id : "classic_login"}).text("classic login"));
+    
     $('#classic_login').click(function () {
         /*
         $('#user').parent().slideToggle();
@@ -75,8 +76,8 @@ $(document).ready(function(){
         */
      //   $('fieldset').slideToggle();
         log_cas = !log_cas;
-        $('#user').parent().slideToggle();
-        $('#password').parent().slideToggle();
+        $('.grouptop #user').parent().slideToggle();
+        $('.groupbottom #password').parent().slideToggle();
         $('#remember_login').fadeToggle();
         $('#remember_login+label').fadeToggle();
         /*
