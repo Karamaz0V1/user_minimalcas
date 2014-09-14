@@ -18,7 +18,7 @@ Install (at least) version 1.3.2 https://wiki.jasig.org/display/CASC/phpCAS+inst
 STEPS
 -----
 
-1. Copy the 'user_cas' folder into the ownCloud's apps folder and make sure to set correct permissions for Apache.
+1. Copy the 'minimal_cas' folder into the ownCloud's apps folder and make sure to set correct permissions for Apache.
 2. Access the ownCloud web interface with an user with admin privileges.
 3. Access the applications panel and enable the CAS app.
 4. Access the administration panel and configure the CAS app.
