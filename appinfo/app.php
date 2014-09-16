@@ -1,7 +1,7 @@
 <?php
 
 /**
- * ownCloud - user_minimal_cas
+ * ownCloud - user_minimalcas
  *
  * @author Sixto Martin <sixto.martin.garcia@gmail.com> #TODO
  * @copyright Sixto Martin Garcia. 2012
@@ -25,21 +25,21 @@
 
 
 
-if (OCP\App::isEnabled('user_minimal_cas')) {
+if (OCP\App::isEnabled('user_minimalcas')) {
 
 	include_once('CAS.php');
 
-	require_once 'minimal_cas/user_minimal_cas.php';
+	require_once 'minimal_cas/user_minimalcas.php';
 
-	OCP\App::registerAdmin('user_minimal_cas', 'settings');
+	OCP\App::registerAdmin('user_minimalcas', 'settings');
 
 	// register user backend
 	OC_User::useBackend( 'CAS' );
 
-	OC::$CLASSPATH['OC_user_minimal_cas_Hooks'] = 'minimal_cas/lib/hooks.php';
-	OCP\Util::connectHook('OC_User', 'logout', 'OC_USER_MINIMAL_CAS_Hooks', 'logout');
+	OC::$CLASSPATH['OC_user_minimalcas_Hooks'] = 'minimal_cas/lib/hooks.php'; // TODO
+	OCP\Util::connectHook('OC_User', 'logout', 'OC_USER_MINIMALCAS_Hooks', 'logout');
 
-	if( isset($_GET['app']) && $_GET['app'] == 'user_minimal_cas' ) {
+	if( isset($_GET['app']) && $_GET['app'] == 'user_minimalcas' ) {
 
 		require_once 'minimal_cas/auth.php';
 
@@ -48,7 +48,7 @@ if (OCP\App::isEnabled('user_minimal_cas')) {
 			OC_Log::write('cas','Error trying to authenticate the user', OC_Log::DEBUG);
 		}
 		
-		if (isset($_SERVER["QUERY_STRING"]) && !empty($_SERVER["QUERY_STRING"]) && $_SERVER["QUERY_STRING"] != 'app=user_minimal_cas') {
+		if (isset($_SERVER["QUERY_STRING"]) && !empty($_SERVER["QUERY_STRING"]) && $_SERVER["QUERY_STRING"] != 'app=user_minimalcas') {
 			header( 'Location: ' . OC::$WEBROOT . '/?' . $_SERVER["QUERY_STRING"]);
 			exit();
 		}
@@ -60,7 +60,7 @@ if (OCP\App::isEnabled('user_minimal_cas')) {
 	if (!OCP\User::isLoggedIn()) {
 
 		// Load js code in order to render the CAS link and to hide parts of the normal login form
-		OCP\Util::addScript('user_minimal_cas', 'utils');
+		OCP\Util::addScript('user_minimalcas', 'utils');
 	}
 
 }

@@ -1,7 +1,7 @@
 <?php
 
 /**
- * ownCloud - user_minimal_cas
+ * ownCloud - user_minimalcas
  *
  * @author Sixto Martin <sixto.martin.garcia@gmail.com>
  * @copyright Sixto Martin Garcia. 2012
@@ -27,7 +27,7 @@ OC_Util::checkAdminUser();
 $params = array('cas_server_version', 'cas_server_hostname', 'cas_server_port', 'cas_server_path', 'cas_autocreate', 'cas_update_user_data',
  'cas_protected_groups', 'cas_default_group', 'cas_email_mapping', 'cas_displayName_mapping','cas_group_mapping','cas_cert_path');
 
-OCP\Util::addscript('user_minimal_cas', 'settings');
+OCP\Util::addscript('user_minimalcas', 'settings');
 
 if ($_POST) {
 	// CSRF check
@@ -35,22 +35,22 @@ if ($_POST) {
 
 	foreach($params as $param) {
 		if (isset($_POST[$param])) {
-			OCP\Config::setAppValue('user_minimal_cas', $param, $_POST[$param]);
+			OCP\Config::setAppValue('user_minimalcas', $param, $_POST[$param]);
 		}  
 		elseif ('cas_autocreate' == $param) {
 			// unchecked checkboxes are not included in the post paramters
-			OCP\Config::setAppValue('user_minimal_cas', $param, 0);
+			OCP\Config::setAppValue('user_minimalcas', $param, 0);
 		}
 		elseif ('cas_update_user_data' == $param) {
-			OCP\Config::setAppValue('user_minimal_cas', $param, 0);
+			OCP\Config::setAppValue('user_minimalcas', $param, 0);
 		}
 	}
 }
 
 // fill template
-$tmpl = new OCP\Template( 'user_minimal_cas', 'settings');
+$tmpl = new OCP\Template( 'user_minimalcas', 'settings');
 foreach ($params as $param) {
-		$value = htmlentities(OCP\Config::getAppValue('user_minimal_cas', $param,''));
+		$value = htmlentities(OCP\Config::getAppValue('user_minimalcas', $param,''));
 		$tmpl->assign($param, $value);
 }
 

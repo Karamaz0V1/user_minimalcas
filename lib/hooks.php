@@ -1,6 +1,6 @@
 <?php
 /**
- * ownCloud - user_minimal_cas
+ * ownCloud - user_minimalcas
  *
  * @author Sixto Martin <sixto.martin.garcia@gmail.com>
  * @copyright Sixto Martin Garcia. 2012
@@ -24,7 +24,7 @@
 /**
  * This class contains all hooks.
  */
-class OC_USER_MINIMAL_CAS_Hooks {
+class OC_USER_MINIMALCAS_Hooks {
 
 	static public function logout($parameters) {
 

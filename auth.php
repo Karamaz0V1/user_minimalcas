@@ -1,7 +1,7 @@
 <?php
 
 /**
- * ownCloud - user_minimal_cas
+ * ownCloud - user_minimalcas
  *
  * @author Sixto Martin <sixto.martin.garcia@gmail.com>
  * @copyright Sixto Martin Garcia. 2012
