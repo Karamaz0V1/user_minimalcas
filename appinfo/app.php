@@ -31,7 +31,7 @@ if (OCP\App::isEnabled('user_minimalcas')) {
 
 	require_once 'user_minimalcas/user_minimalcas.php';
 
-//	OCP\App::registerAdmin('user_minimalcas', 'settings');
+	OCP\App::registerAdmin('user_minimalcas', 'settings');
 
 	// register user backend
 	OC_User::useBackend( 'MINIMALCAS' );
