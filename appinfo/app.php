@@ -29,19 +29,19 @@ if (OCP\App::isEnabled('user_minimalcas')) {
 
 	include_once('CAS.php');
 
-	require_once 'minimal_cas/user_minimalcas.php';
+	require_once 'user_minimalcas/user_minimalcas.php';
 
 	OCP\App::registerAdmin('user_minimalcas', 'settings');
 
 	// register user backend
 	OC_User::useBackend( 'CAS' );
 
-	OC::$CLASSPATH['OC_user_minimalcas_Hooks'] = 'minimal_cas/lib/hooks.php'; // TODO
+	OC::$CLASSPATH['OC_USER_MINIMALCAS_Hooks'] = 'user_minimalcas/lib/hooks.php'; // TODO
 	OCP\Util::connectHook('OC_User', 'logout', 'OC_USER_MINIMALCAS_Hooks', 'logout');
 
 	if( isset($_GET['app']) && $_GET['app'] == 'user_minimalcas' ) {
 
-		require_once 'minimal_cas/auth.php';
+		require_once 'user_minimalcas/auth.php';
 
 		if (!OC_User::login('', '')) {
 			$error = true;
