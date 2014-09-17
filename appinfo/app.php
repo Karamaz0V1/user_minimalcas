@@ -31,10 +31,10 @@ if (OCP\App::isEnabled('user_minimalcas')) {
 
 	require_once 'user_minimalcas/user_minimalcas.php';
 
-	OCP\App::registerAdmin('user_minimalcas', 'settings');
+//	OCP\App::registerAdmin('user_minimalcas', 'settings');
 
 	// register user backend
-	OC_User::useBackend( 'CAS' );
+	OC_User::useBackend( 'MINIMALCAS' );
 
 	OC::$CLASSPATH['OC_USER_MINIMALCAS_Hooks'] = 'user_minimalcas/lib/hooks.php'; // TODO
 	OCP\Util::connectHook('OC_User', 'logout', 'OC_USER_MINIMALCAS_Hooks', 'logout');
